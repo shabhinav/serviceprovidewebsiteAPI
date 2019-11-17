@@ -1,0 +1,59 @@
+{
+  "name": "Services",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "service_name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "userId": {
+      "type": "number",
+      "required": true
+    },
+    "companyId": {
+      "type": "number",
+      "required": true
+    },
+    "categoryId": {
+      "type": "number",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "requied": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "users": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "userId"
+    },
+    "companyDetails": {
+      "type": "belongsTo",
+      "model": "Company_details",
+      "foreignKey": "companyId"
+    },
+    "billings": {
+      "type": "hasMany",
+      "model": "Billing",
+      "foreignKey": "serviceId"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "category",
+      "foreignKey": "categoryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

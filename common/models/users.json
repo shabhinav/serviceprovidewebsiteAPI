@@ -1,0 +1,52 @@
+{
+  "name": "Users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "pincode": {
+      "type": "number",
+      "required": true
+    },
+    "phone_no": {
+      "type": "string",
+      "required": true
+    },
+    "is_seller": {
+      "type": "boolean",
+      "required": true
+    },
+    "is_admin": {
+      "type": "boolean",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "services": {
+      "type": "hasMany",
+      "model": "Services",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Billing",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "bill_date": {
+      "type": "string",
+      "required": true
+    },
+    "serviceId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "services": {
+      "type": "belongsTo",
+      "model": "Services",
+      "foreignKey": "serviceId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
